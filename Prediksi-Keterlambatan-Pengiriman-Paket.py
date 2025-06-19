@@ -4,7 +4,6 @@ from tkinter import ttk, messagebox
 from collections import Counter
 import math, random
 
-# === MUAT DATA & ENKODE ===
 data = pd.read_csv("C:\\Users\\Lenovo\\Downloads\\Train.csv")
 data = data.drop(columns=["ID", "Customer_rating"])
 
@@ -20,7 +19,6 @@ data_fitur = data[fitur].values.tolist()
 data_target = data["Reached.on.Time_Y.N"].tolist()
 data_gabungan = [x + [y] for x, y in zip(data_fitur, data_target)]
 
-# === BAGI DATA ===
 def bagi_data(data, rasio_uji=0.2, acak_seed=42):
     random.seed(acak_seed)
     data_acak = data[:]
